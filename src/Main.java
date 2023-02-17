@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class Main{
     public static void main(String[] args) {
-        int runs=0,wickets=0;
+        int run=0,wicket=0;
         Team team1 = new Team();
         Team team2 = new Team();
         Scanner sc = new Scanner(System.in);
@@ -52,7 +52,9 @@ class Main{
             System.out.println(team1Name+" has elected to bat first.");
             innings = team1Name+" batting";
             for(int i = 0;i<overs;i++){
-                team1Battingarr[i].gettingScore(runs,wickets);
+                team1Battingarr[i].gettingScore(run,wicket);
+                run+=team1Battingarr[i].runs;
+                wicket+=team1Battingarr[i].wickets;
             }
         }else{
             System.out.println(team1Name+ "has elected to bowl.");
@@ -66,7 +68,9 @@ class Main{
             System.out.println(team2Name+" has elected to bat first.");
             innings = team2Name+" batting";
             for(int i = 0;i<overs;i++){
-                team1Battingarr[i].gettingScore(runs,wickets);
+                team2Battingarr[i].gettingScore(run,wicket);
+                run+=team2Battingarr[i].runs;
+                wicket+=team2Battingarr[i].wickets;
             }
         }else{
             System.out.println(team2Name+" has elected to bowl.");

@@ -4,7 +4,7 @@ import java.lang.Math;
 
 class Scorecard{
     String input;
-    int runs;
+    int runs=0;
     int wickets;
     String over[] = new String[6];
     Scanner sc = new Scanner(System.in);
@@ -22,42 +22,46 @@ class Scorecard{
         else
         return 1;
     }
-    public void gettingScore(int a,int b){
+    public void gettingScore(int a, int b){
+        runs = a;
+        wickets = b;
         for(int i = 0;i<6;i++){
             System.out.println("Enter number of runs taken. runout,Bold,catchout,stumping for wicket, Wide and no ball also to be mentioned.");
         input = sc.nextLine();
 
         switch(input.toLowerCase()){
             case "1":
-            a+=1;
+            runs+=1;
             break;
             case "2":
-            a+=2;
+            runs+=2;
             break;
             case "3":
-            a+=3;
+            runs+=3;
             break;
             case "4":
-            a+=4;
+            runs+=4;
             break;
             case "6":
-            a+=6;
+            runs+=6;
             break;
             case "out":
-            b+=1;
+            wickets+=1;
             break;
             case "wide":
-            a+=1;
+            runs+=1;
             break;
             default:
             System.out.println("Invalid Input");
             break;
         }
-            System.out.println(a+"/"+b);
+            System.out.println(runs+"/"+wickets);
             if(input.equalsIgnoreCase("wide")|| input.equalsIgnoreCase("noball")){
                 i--;
                 continue;
             }
+            
+            
             
         }
     }
